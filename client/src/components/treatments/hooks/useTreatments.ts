@@ -14,7 +14,7 @@ export function useTreatments(): Treatment[] {
 
   const { data = fallbackData } = useQuery({
     queryKey: [queryKeys.treatments],
-    queryFn: getTreatments
+    queryFn: getTreatments,
   });
 
   return data;
@@ -24,6 +24,6 @@ export function usePrefetchTreatments(): void {
   const queryClient = useQueryClient();
   queryClient.prefetchQuery({
     queryKey: [queryKeys.treatments],
-    queryFn: getTreatments
+    queryFn: getTreatments,
   })
 }
